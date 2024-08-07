@@ -6,7 +6,7 @@ Job:
     - published_on
     - vacancy
     - salary
-    - Category(FK)
+    - category(FK)
 
     - apply_job
     - post_job
