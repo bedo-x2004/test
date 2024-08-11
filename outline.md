@@ -13,3 +13,7 @@ Job:
 
 Category:
 
+checkpoint :
+    - inherit from base.html
+    - 
+
