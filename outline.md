@@ -14,6 +14,5 @@ Job:
 Category:
 
 checkpoint :
-    - inherit from base.html
-    - 
+    - video 11 (finished)
 
