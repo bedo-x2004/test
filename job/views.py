@@ -1,5 +1,6 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
+import slugify
 from .models import Job
 
 # Create your views here.
@@ -12,7 +13,7 @@ def job_list(request):
     context = {'jobs':page_obj}
     return render(request, 'job\job_list.html', context)
 
-def job_details(request, id):
-    job_details = Job.objects.get(id=id)
+def job_details(request, slug):
+    job_details = Job.objects.get(slug=slug)
     context = {'job':job_details}
     return render(request, 'job\job_details.html', context)

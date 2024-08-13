@@ -1,4 +1,5 @@
 from django.db import models
+import slugify
 
 # Create your models here.
 
@@ -11,6 +12,9 @@ class Job(models.Model):
     # # FKs
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
 
+    # slug
+    slug = models.SlugField(blank=True, null=True)
+
     # attributes
     title = models.CharField(max_length=100)
     location = models.CharField(max_length=30)
@@ -22,6 +26,10 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify.slugify(self.title)
+        super(Job, self).save(*args, **kwargs)
     
 
 class Category(models.Model):
