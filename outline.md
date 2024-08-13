@@ -14,5 +14,5 @@ Job:
 Category:
 
 checkpoint :
-    - video 13 (finished)
+    - video 14 (finished)
 
